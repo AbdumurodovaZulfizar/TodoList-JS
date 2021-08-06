@@ -1,0 +1,85 @@
+header {
+  height: 60px;
+  width: 100%;
+  background-color: rgb(230, 34, 207);
+}
+
+.pink-back {
+  background-color: rgb(230, 34, 207);
+  height: 40px;
+  width: 100%;
+}
+
+.pink {
+  background-color: rgb(230, 34, 207);
+  width: 50px;
+  height: 50px;
+  box-shadow: 5px 5px 5px grey;
+  transition-property: transform;
+  transition-duration: 2s;
+}
+
+
+
+.pink:hover {
+  transform: scale3d(1.1, 1.1, 1.1);
+  box-shadow: 8px 8px 8px grey;
+}
+
+.padding-4 {
+  padding: 10px;
+}
+
+.parent-place {
+  position: relative;
+}
+
+.new-project-button, .new-todo-button, .update-todo-button {
+  border: 1px solid rgb(230, 34, 207);
+  color: rgb(230, 34, 207);
+}
+
+.new-project-button:hover, .new-todo-button:hover, .update-todo-button:hover {
+  background-color: rgb(230, 34, 207);
+  color: #eee;
+}
+
+.pro {
+  font-family: 'Andada Pro', serif;
+}
+textarea:focus {
+  outline: none;
+}
+.padding-top {
+  padding-top: 60px;
+}
+
+.menu-bar {
+  background-color: rgba(228, 139, 154, 0.3);
+  height: 100vh;
+}
+
+.pop-project-side {
+  background-color: rgba(228, 139, 154, 0.3);
+  height: 100%;
+}
+
+.pop-project {
+  height: auto;
+}
+
+.menu-button:hover, .scale {
+  transform: scale3d(1.1, 1.1, 1.1);
+  color: rgb(230, 34, 207);
+}
+
+.menu-button, .projects {
+  background-color: transparent;
+  border: 0;
+  transition-property: transform;
+  transition-duration: 2s;
+}
+
+.margin-top {
+  margin-top: 10px;
+}
