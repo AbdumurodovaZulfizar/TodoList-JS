@@ -67,7 +67,7 @@ const todoView = () => {
         `).join('')}
       </ul>
       `;
-    document.getElementById('todos').innerHTML = element;
+    document.getElementById('todolist').innerHTML = element;
   };
 
   const updateTodoModel = (todo, todoId) => {
@@ -81,8 +81,8 @@ const todoView = () => {
     description.value = todo.description;
     id.value = todoId;
 
-    document.querySelector('.add-task-btn').style.display = 'none';
-    document.querySelector('.update-task-btn').style.display = 'block';
+    document.querySelector('.add-todo').style.display = 'none';
+    document.querySelector('.update-todo').style.display = 'block';
   };
 
   return { render, updateTodoModel };
