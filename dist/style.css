@@ -80,6 +80,10 @@ textarea:focus {
   transition-duration: 2s;
 }
 
+.update-button {
+  display: none;
+}
+
 .margin-top {
   margin-top: 10px;
 }

@@ -1,21 +1,20 @@
-import _ from 'lodash';
-import 'bootstrap';
 import 'jquery';
+// import 'bootstrap';
 
 import { todoController, projectController } from './controllers';
-import { TodoModel, projectModel } from './models';
+import { TodoModel, ProjectModel } from './models';
 import todoView from './todoView';
 import projectView from './projectView';
 
-const form = document.getElementById('project-form');
-const todoForm = document.getElementById('todo-form');
+const projectButton = document.getElementById('add-project');
+const todoButton = document.getElementById('add-todo');
 
-form.addEventListener('submit', e => {
+projectButton.addEventListener('click', e => {
   e.preventDefault();
-  const form = e.target;
+  const form = document.getElementById("project-form");
   const { project } = form;
   if (project.value !== '' && project.value !== ' ') {
-    const controller = projectController(projectModel, projectView);
+    const controller = projectController(ProjectModel, projectView);
     controller.addProject(project.value);
     controller.showProjects();
     form.reset();
@@ -23,12 +22,15 @@ form.addEventListener('submit', e => {
   }
 });
 
-todoForm.addEventListener('submit', e => {
+todoButton.addEventListener('click', e => {
   e.preventDefault();
-  const form = e.target;
-  const {
-    title, priority, date, description, id,
-  } = form;
+  const form = document.getElementById("todo-form");
+  const title = document.getElementById("todo-title");
+  const priority = document.getElementById("priority");
+  const date = document.getElementById("todoDate");
+  const description = document.getElementById("floatingTextarea");
+  const id = document.getElementById("id");
+
   const projectId = document.getElementById('project-title').getAttribute('data-project-index');
   if (title.value !== '' && title.value !== ' ') {
     const controller = todoController(TodoModel, todoView);
@@ -41,14 +43,14 @@ todoForm.addEventListener('submit', e => {
       id.value,
     );
     controller.showTodos(projectId);
-    form.reset();
+    document.getElementById("todo-form").reset();
     $('#todoModal').modal('hide'); // eslint-disable-line
   }
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-  const projects = projectModel().all();
-  projectController(projectModel, projectView).showProjects();
+  const projects = ProjectModel().all();
+  projectController(ProjectModel, projectView).showProjects();
   if (projects.length > 0) {
     todoController(TodoModel, todoView).showTodos();
   }
@@ -73,13 +75,15 @@ document.addEventListener('click', e => {
     const project = e.target.getAttribute('data-project');
     const controller = todoController(TodoModel, todoView);
     controller.editTodo(parseInt(project, 10), parseInt(todo, 10));
-    $(e.target.closest('.modal')).modal('hide'); // eslint-disable-line
+    // $(e.target.closest('.modal')).modal('hide'); // eslint-disable-line
   }
 
   if (e.target.classList.contains('add-todo')) {
     document.querySelector('.add-todo').style.display = 'block';
+    document.getElementById("todoMadalLabel").style.display = "block"
     document.querySelector('.update-todo').style.display = 'none';
-    todoForm.reset();
+    document.getElementById("todoModalLabel1").style.display = "none";
+    document.getElementById("todo-form").reset();
     todoForm.id.value = '';
   }
 
