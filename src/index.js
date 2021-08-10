@@ -95,3 +95,7 @@ document.addEventListener('click', e => {
     controller.showTodos(parseInt(project, 10));
   }
 });
+
+document.getElementById("menu-bar").addEventListener("click", () => {
+  document.getElementById("navbar").classList.toggle("d-none");
+})
