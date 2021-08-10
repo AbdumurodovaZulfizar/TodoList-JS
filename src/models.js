@@ -1,5 +1,5 @@
-const ProjectModel =()=> {
-  const project = (title) => ({title});
+const ProjectModel = ()=> {
+  const project = (title) => ({ title });
 
   const all = () => JSON.parse(localStorage.getItem('projects')) || [{ title: 'Today' }];
 
@@ -83,4 +83,4 @@ const TodoModel = () => {
   };
 };
 
-export {TodoModel, ProjectModel};
+export { TodoModel, ProjectModel };

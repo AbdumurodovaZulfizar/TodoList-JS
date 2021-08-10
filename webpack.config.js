@@ -1,6 +1,6 @@
 
 const path = require('path');
-const webpack = require('webpack');
+const web = require('webpack');
 
 module.exports = {
   entry: './src/index.js',
@@ -13,7 +13,7 @@ module.exports = {
     compress: true,
   },
   plugins: [
-    new webpack.ProvidePlugin({
+    new web.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery',
     }),

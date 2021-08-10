@@ -2,7 +2,7 @@ const projectController = (projectModel, projectView) => {
   const model = projectModel();
   const view = projectView();
 
-  const addProject = title => {
+  const addProject = (title) => {
     const newProject = model.project(title);
     model.save(newProject);
   };
@@ -47,8 +47,8 @@ const todoController = (todoModel, todoView) => {
 
 
   return {
-    addTodo, showTodos, removeTodo, editTodo, completeTodo,
+    addTodo, showTodos, removeTodo, editTodo, completeTodo
   };
 };
 
-export {todoController, projectController };
+export { todoController, projectController };

@@ -68,11 +68,10 @@ const todoView = () => {
   };
 
   const updateTodoModel = (todo, todoId) => {
-    const form = document.getElementById('todo-form');
-    const title = document.getElementById("todo-title");
-  const priority = document.getElementById("priority");
+  const title = document.getElementById('todo-title');
+  const priority = document.getElementById('priority');
   const date = document.getElementById("todoDate");
-  const description = document.getElementById("floatingTextarea");
+  const description = document.getElementById('floatingTextarea');
   const id = document.getElementById('id');
     title.value = todo.title;
     priority.value = todo.priority;
