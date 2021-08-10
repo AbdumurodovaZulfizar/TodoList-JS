@@ -28,7 +28,7 @@ const todoView = () => {
         </div>
         <div class="modal-footer">
           <button type="submit" class="btn btn-outline-success edit-todo" data-toggle="modal" data-dismiss="modal" data-target="#todoModal" data-todo="${index}" data-project="${projectId}">Edit</button>
-          <button type="submit" class="btn btn-outline-danger delete-todo" data-todo="${index}" data-project="${projectId}" >Delete</button>
+          <button type="submit" class="btn btn-outline-danger delete-todo" data-todo="${index}" data-project="${projectId}" data-dismiss="modal">Delete</button>
         </div>
       </div>
     </div>
@@ -38,26 +38,23 @@ const todoView = () => {
   const render = (projectId, project, todos) => {
     const element = `
 
-      <div  class="d-flex justify-content-between pr-2  py-2">
-      <h3 class="text-center" data-project-index="${projectId}" id="project-title">${project.title}</h3>
-      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#todoModal">
-      Add todo
-    </button>
+      <div  class="text-center pr-2  py-2">
+      <h3 class="text-center pro fw-bold" data-project-index="${projectId}" id="project-title">${project.title}</h3>
       </div>
-      <hr/>
+      <section type="button" class="pink rounded-circle shadow-plus float-end mx-3 my-2" data-bs-toggle="modal" data-bs-target="#todoModal">
+      <i class="fas fa-plus fa-2x padding-4"></i>
+    </section>
       <ul class="list-group list-group-flush mb-4">
       ${todos.map((todo, index) => `
-        <li class="task-list-item mb-3 list-group-item list-group-item-action border-${priorityClass(todo.priority)} border-left border-bottom-0 ${todo.isCompleted ? 'task-completed' : ''}">
+        <li class="mb-3 todo-item-color rounded mx-2 list-group-item border-${priorityClass(todo.priority)} border-left border-bottom-0 ${todo.isCompleted ? 'task-completed' : ''}">
             <div class="d-flex align-items-center">
               <input type="checkbox" id="todo${index}" data-todo=${index} data-project="${projectId}" class="custom-checkbox todo-checkmark" ${todo.isCompleted ? 'checked' : ''} >
               <label for="todo${index}" class="ml-3 d-flex justify-content-between w-100 align-items-center mb-0">
-                <div class="mb-0">
-                  <h4 class="task-title">${todo.title}</h4>
+                <div class="mb-0 px-2">
+                  <h6 class="task-title">${todo.title}</h6>
                   <p class="mb-0"><small><span>Due Date:</span> <span>${todo.date}</span></small></p>
                 </div>
-                <button type="submit" class="btn btn-outline-success edit-todo" data-toggle="modal" data-target="#todoModal" data-todo="${index}" data-project="${projectId} data-didmiss="modal">Edit</button>
-          <button type="submit" class="btn btn-outline-danger delete-todo" data-todo="${index}" data-project="${projectId}" data-dismiss="modal">Delete</button>
-                <a href="#" class="link" data-toggle="modal" data-target="#detailModel${index}">Details</a>
+                <a href="#" class="new-todo-button nav-link rounded py-1 px-2 text-dark" data-toggle="modal" data-target="#detailModel${index}">Details</a>
               </label>
             </div>
           </li>

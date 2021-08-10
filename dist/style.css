@@ -59,9 +59,22 @@ textarea:focus {
   height: 100vh;
 }
 
+.todo-item-color:hover {
+  background-color: rgba(228, 139, 154, 0.3);
+}
+
+.todo-item-color {
+  border: 1px rgb(230, 34, 207) solid;
+}
+
 .pop-project-side {
   background-color: rgba(228, 139, 154, 0.3);
   height: 100%;
+}
+
+.task-completed .task-title,
+.task-completed:hover .task-title {
+  text-decoration: line-through;
 }
 
 .pop-project {
