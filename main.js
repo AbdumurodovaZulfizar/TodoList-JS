@@ -11204,7 +11204,7 @@ const todoView = () => {
   };
 
   const updateTodoModel = (todo, todoId) => {
-    // const form = document.getElementById('todo-form');
+    const form = document.getElementById('todo-form');
     const title = document.getElementById("todo-title");
   const priority = document.getElementById("priority");
   const date = document.getElementById("todoDate");
@@ -11335,6 +11335,10 @@ document.addEventListener('click', e => {
     controller.showTodos(parseInt(project, 10));
   }
 });
+
+document.getElementById("menu-bar").addEventListener("click", () => {
+  document.getElementById("navbar").classList.toggle("d-none");
+})
 
 
 /***/ })
