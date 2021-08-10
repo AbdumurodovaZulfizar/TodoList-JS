@@ -33,7 +33,7 @@ cd TodoList-JS
 
 ### Live Version
 
-[Restaurant Page](https://abdumurodovazulfizar.github.io/NestOne-Traditional-Restaurant/)
+[ToDo List](https://abdumurodovazulfizar.github.io/TodoList-JS/)
 
 ## Authors
 
