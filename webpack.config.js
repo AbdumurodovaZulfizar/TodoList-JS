@@ -1,6 +1,6 @@
 
 const path = require('path');
-const web = require('webpack'); // eslint-disable-line
+const webpack = require('webpack');
 
 module.exports = {
   entry: './src/index.js',
@@ -13,7 +13,7 @@ module.exports = {
     compress: true,
   },
   plugins: [
-    new web.ProvidePlugin({
+    new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery',
     }),
