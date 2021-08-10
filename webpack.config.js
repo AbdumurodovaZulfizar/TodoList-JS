@@ -1,6 +1,6 @@
 
 const path = require('path');
-const web = require('webpack');
+const web = require('webpack'); // eslint-disable-line
 
 module.exports = {
   entry: './src/index.js',

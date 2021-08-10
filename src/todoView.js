@@ -67,7 +67,7 @@ const todoView = () => {
     document.getElementById('todo-list').innerHTML = element;
   };
 
-    const updateTodoModel = (todo, todoId) => {
+  const updateTodoModel = (todo, todoId) => {
     const title = document.getElementById('todo-title');
     const priority = document.getElementById('priority');
     const date = document.getElementById('todoDate');
