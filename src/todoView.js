@@ -27,7 +27,7 @@ const todoView = () => {
             </div>
         </div>
         <div class="modal-footer">
-          <button type="submit" class="btn btn-outline-success edit-todo" data-toggle="modal" data-target="#todoModal" data-todo="${index}" data-project="${projectId}">Edit</button>
+          <button type="submit" class="btn btn-outline-success edit-todo" data-toggle="modal" data-dismiss="modal" data-target="#todoModal" data-todo="${index}" data-project="${projectId}">Edit</button>
           <button type="submit" class="btn btn-outline-danger delete-todo" data-todo="${index}" data-project="${projectId}" >Delete</button>
         </div>
       </div>
@@ -76,7 +76,7 @@ const todoView = () => {
   const priority = document.getElementById("priority");
   const date = document.getElementById("todoDate");
   const description = document.getElementById("floatingTextarea");
-  const id = document.getElementById("id");
+  const id = document.getElementById('id');
     title.value = todo.title;
     priority.value = todo.priority;
     date.value = todo.date;

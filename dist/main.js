@@ -11163,7 +11163,7 @@ const todoView = () => {
             </div>
         </div>
         <div class="modal-footer">
-          <button type="submit" class="btn btn-outline-success edit-todo" data-toggle="modal" data-target="#todoModal" data-todo="${index}" data-project="${projectId}">Edit</button>
+          <button type="submit" class="btn btn-outline-success edit-todo" data-toggle="modal" data-dismiss="modal" data-target="#todoModal" data-todo="${index}" data-project="${projectId}">Edit</button>
           <button type="submit" class="btn btn-outline-danger delete-todo" data-todo="${index}" data-project="${projectId}" >Delete</button>
         </div>
       </div>
@@ -11212,7 +11212,7 @@ const todoView = () => {
   const priority = document.getElementById("priority");
   const date = document.getElementById("todoDate");
   const description = document.getElementById("floatingTextarea");
-  const id = document.getElementById("id");
+  const id = document.getElementById('id');
     title.value = todo.title;
     priority.value = todo.priority;
     date.value = todo.date;
@@ -11235,7 +11235,7 @@ const todoView = () => {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* WEBPACK VAR INJECTION */(function($) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_jquery__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__controllers__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__models__ = __webpack_require__(2);
@@ -11261,7 +11261,7 @@ projectButton.addEventListener('click', e => {
     controller.addProject(project.value);
     controller.showProjects();
     form.reset();
-    $('#ProjectModal').modal('hide'); // eslint-disable-line
+    // $('#ProjectModal').modal('hide'); // eslint-disable-line
   }
 });
 
@@ -11287,7 +11287,7 @@ todoButton.addEventListener('click', e => {
     );
     controller.showTodos(projectId);
     document.getElementById("todo-form").reset();
-    $('#todoModal').modal('hide'); // eslint-disable-line
+    // $('#todoModal').modal('hide'); // eslint-disable-line
   }
 });
 
@@ -11308,7 +11308,7 @@ document.addEventListener('click', e => {
     const todo = e.target.getAttribute('data-todo');
     const project = e.target.getAttribute('data-project');
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__models__["b" /* TodoModel */])().remove(project, todo);
-    $(e.target.closest('.modal')).modal('hide'); // eslint-disable-line
+    // $(e.target.closest('.modal')).modal('hide'); // eslint-disable-line
     const controller = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__controllers__["b" /* todoController */])(__WEBPACK_IMPORTED_MODULE_2__models__["b" /* TodoModel */], __WEBPACK_IMPORTED_MODULE_3__todoView__["a" /* default */]);
     controller.showTodos(parseInt(project, 10));
   }
@@ -11339,7 +11339,6 @@ document.addEventListener('click', e => {
   }
 });
 
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(0)))
 
 /***/ })
 /******/ ]);

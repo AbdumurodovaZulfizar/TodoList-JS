@@ -18,7 +18,7 @@ projectButton.addEventListener('click', e => {
     controller.addProject(project.value);
     controller.showProjects();
     form.reset();
-    $('#ProjectModal').modal('hide'); // eslint-disable-line
+    // $('#ProjectModal').modal('hide'); // eslint-disable-line
   }
 });
 
@@ -44,7 +44,7 @@ todoButton.addEventListener('click', e => {
     );
     controller.showTodos(projectId);
     document.getElementById("todo-form").reset();
-    $('#todoModal').modal('hide'); // eslint-disable-line
+    // $('#todoModal').modal('hide'); // eslint-disable-line
   }
 });
 
@@ -65,7 +65,7 @@ document.addEventListener('click', e => {
     const todo = e.target.getAttribute('data-todo');
     const project = e.target.getAttribute('data-project');
     TodoModel().remove(project, todo);
-    $(e.target.closest('.modal')).modal('hide'); // eslint-disable-line
+    // $(e.target.closest('.modal')).modal('hide'); // eslint-disable-line
     const controller = todoController(TodoModel, todoView);
     controller.showTodos(parseInt(project, 10));
   }
