@@ -7,11 +7,11 @@ import projectView from './projectView';
 
 const projectButton = document.getElementById('add-project');
 const todoButton = document.getElementById('add-todo');
-const todoForm = document.getElementById("todo-form");
+const todoForm = document.getElementById('todo-form');
 
-projectButton.addEventListener('click', e => {
+projectButton.addEventListener('click', (e) => {
   e.preventDefault();
-  const form = document.getElementById("project-form");
+  const form = document.getElementById('project-form');
   const { project } = form;
   if (project.value !== '' && project.value !== ' ') {
     const controller = projectController(ProjectModel, projectView);
@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-document.addEventListener('click', e => {
+document.addEventListener('click', (e) => {
   if (e.target.classList.contains('project-item')) {
     const controller = todoController(TodoModel, todoView);
     controller.showTodos(parseInt(e.target.getAttribute('data-index'), 10));
@@ -75,10 +75,10 @@ document.addEventListener('click', e => {
 
   if (e.target.classList.contains('add-todo')) {
     document.querySelector('.add-todo').style.display = 'block';
-    document.getElementById("todoMadalLabel").style.display = "block"
+    document.getElementById('todoMadalLabel').style.display = 'block';
     document.querySelector('.update-todo').style.display = 'none';
-    document.getElementById("todoModalLabel1").style.display = "none";
-    document.getElementById("todo-form").reset();
+    document.getElementById('todoModalLabel1').style.display = 'none';
+    document.getElementById('todo-form').reset();
     todoForm.id.value = '';
   }
 
@@ -93,4 +93,4 @@ document.addEventListener('click', e => {
 
 document.getElementById('menu-bar').addEventListener('click', () => {
   document.getElementById('navbar').classList.toggle('d-none');
-})
+});

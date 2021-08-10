@@ -1,4 +1,4 @@
-const ProjectModel = ()=> {
+const ProjectModel = () => {
   const project = (title) => ({ title });
 
   const all = () => JSON.parse(localStorage.getItem('projects')) || [{ title: 'Today' }];
@@ -6,7 +6,7 @@ const ProjectModel = ()=> {
   const save = (project) => {
     const projects = all();
     if (projects) {
-      if (!projects.some(item => item.title === project.title)) {
+      if (!projects.some((item) => item.title === project.title)) {
         projects.push(project);
         localStorage.setItem('projects', JSON.stringify(projects));
       }
@@ -24,7 +24,7 @@ const ProjectModel = ()=> {
   return {
     project, all, save, get,
   };
-}
+};
 
 
 const TodoModel = () => {

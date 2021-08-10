@@ -47,7 +47,7 @@ const todoController = (todoModel, todoView) => {
 
 
   return {
-    addTodo, showTodos, removeTodo, editTodo, completeTodo
+    addTodo, showTodos, removeTodo, editTodo, completeTodo,
   };
 };
 

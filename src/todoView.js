@@ -1,5 +1,5 @@
 const todoView = () => {
-  const priorityClass = priority => {
+  const priorityClass = (priority) => {
     if (priority === 'high') {
       return 'danger';
     } if (priority === 'medium') {
@@ -67,12 +67,12 @@ const todoView = () => {
     document.getElementById('todo-list').innerHTML = element;
   };
 
-  const updateTodoModel = (todo, todoId) => {
-  const title = document.getElementById('todo-title');
-  const priority = document.getElementById('priority');
-  const date = document.getElementById("todoDate");
-  const description = document.getElementById('floatingTextarea');
-  const id = document.getElementById('id');
+    const updateTodoModel = (todo, todoId) => {
+    const title = document.getElementById('todo-title');
+    const priority = document.getElementById('priority');
+    const date = document.getElementById('todoDate');
+    const description = document.getElementById('floatingTextarea');
+    const id = document.getElementById('id');
     title.value = todo.title;
     priority.value = todo.priority;
     date.value = todo.date;
